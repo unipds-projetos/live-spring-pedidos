@@ -24,12 +24,7 @@ public class PedidoController {
 
   @GetMapping("/{id}")
   public ResponseEntity<Pedido> porId(@PathVariable("id") Long id) {
-    Optional<Pedido> optionalPedido = pedidoRepository.findById(id);
-    if (optionalPedido.isEmpty()) {
-     return ResponseEntity.notFound().build();
-    }
-    Pedido pedido = optionalPedido.get();
-    return ResponseEntity.ok(pedido);
+    return pedidoRepository.findById(id).map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
   }
 
 }
