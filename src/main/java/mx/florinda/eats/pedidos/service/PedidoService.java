@@ -1,6 +1,7 @@
 package mx.florinda.eats.pedidos.service;
 
 import mx.florinda.eats.pedidos.dto.PedidoDto;
+import mx.florinda.eats.pedidos.model.CategoriaCardapio;
 import mx.florinda.eats.pedidos.repository.PedidoRepository;
 import org.springframework.stereotype.Service;
 
@@ -24,4 +25,10 @@ public class PedidoService {
         return pedidoRepository.findById(id).map(PedidoDto::new);
     }
 
+    public List<PedidoDto> buscaPorCategoria(String nomeCategoria) {
+        return pedidoRepository.buscaCategoriaDoCardapio(CategoriaCardapio.valueOf(nomeCategoria.toUpperCase()))
+                .stream()
+                .map(PedidoDto::new)
+                .toList();
+    }
 }

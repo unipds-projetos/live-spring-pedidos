@@ -44,6 +44,32 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "busca por categoria",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/pedidos/por-categoria?nome=ENTRADAS",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pedidos",
+						"por-categoria"
+					],
+					"query": [
+						{
+							"key": "nome",
+							"value": "ENTRADAS"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
