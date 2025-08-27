@@ -17,7 +17,7 @@ public class PedidoService {
     }
 
     public List<PedidoDto> lista() {
-        return pedidoRepository.findAll().stream().map(PedidoDto::new).toList();
+        return pedidoRepository.listaComItens().stream().map(PedidoDto::new).toList();
     }
 
     public Optional<PedidoDto> buscaPorId(Long id) {
