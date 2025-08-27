@@ -17,13 +17,8 @@ public class Pedido {
   @Enumerated(EnumType.STRING)
   private StatusPedido status;
 
-  private String nomeCliente;
-
-  private String cpfCliente;
-
-  private String celularCliente;
-
-  private String enderecoCliente;
+  @Embedded
+  private Cliente cliente;
 
   @OneToMany(mappedBy = "pedido")
   private List<ItemPedido> itensPedido;
@@ -52,36 +47,12 @@ public class Pedido {
     this.status = status;
   }
 
-  public String getNomeCliente() {
-    return nomeCliente;
+  public Cliente getCliente() {
+    return cliente;
   }
 
-  public void setNomeCliente(String nomeCliente) {
-    this.nomeCliente = nomeCliente;
-  }
-
-  public String getCpfCliente() {
-    return cpfCliente;
-  }
-
-  public void setCpfCliente(String cpfCliente) {
-    this.cpfCliente = cpfCliente;
-  }
-
-  public String getCelularCliente() {
-    return celularCliente;
-  }
-
-  public void setCelularCliente(String celularCliente) {
-    this.celularCliente = celularCliente;
-  }
-
-  public String getEnderecoCliente() {
-    return enderecoCliente;
-  }
-
-  public void setEnderecoCliente(String enderecoCliente) {
-    this.enderecoCliente = enderecoCliente;
+  public void setCliente(Cliente cliente) {
+    this.cliente = cliente;
   }
 
   public List<ItemPedido> getItensPedido() {

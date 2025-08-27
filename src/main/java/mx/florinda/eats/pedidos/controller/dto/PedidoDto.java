@@ -25,10 +25,10 @@ public class PedidoDto {
         this.id = pedido.getId();
         this.dataHora = pedido.getDataHora();
         this.status = pedido.getStatus();
-        this.nomeCliente = pedido.getNomeCliente();
-        this.cpfCliente = pedido.getCpfCliente();
-        this.celularCliente = pedido.getCelularCliente();
-        this.enderecoCliente = pedido.getEnderecoCliente();
+        this.nomeCliente = pedido.getCliente().getNome();
+        this.cpfCliente = pedido.getCliente().getCpf();
+        this.celularCliente = pedido.getCliente().getCelular();
+        this.enderecoCliente = pedido.getCliente().getEndereco();
         this.itensPedido = pedido.getItensPedido().stream()
                 .map(ItemPedidoDto::new)
                 .collect(Collectors.toList());
