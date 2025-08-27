@@ -1,5 +1,6 @@
 package mx.florinda.eats.pedidos;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
@@ -17,6 +18,7 @@ public class ItemPedido {
 
   private String observacao;
 
+  @JsonIgnore
   @ManyToOne
   private Pedido pedido;
 
