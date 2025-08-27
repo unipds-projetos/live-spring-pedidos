@@ -1,0 +1,13 @@
+services:
+  db.florinda.pedidos:
+    image: mysql:9
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: senha123
+      MYSQL_DATABASE: florinda_pedidos
+    ports:
+      - '3306:3306'
+    volumes:
+      - mysql.florinda.pedidos:/var/lib/mysql
+volumes:
+  mysql.florinda.pedidos:
