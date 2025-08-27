@@ -1,6 +1,6 @@
 package mx.florinda.eats.pedidos.controller;
 
-import mx.florinda.eats.pedidos.model.Pedido;
+import mx.florinda.eats.pedidos.controller.dto.PedidoDto;
 import mx.florinda.eats.pedidos.repository.PedidoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,13 +19,13 @@ public class PedidoController {
   private PedidoRepository pedidoRepository;
 
   @GetMapping
-  public List<Pedido> lista() {
-    return pedidoRepository.findAll();
+  public List<PedidoDto> lista() {
+    return pedidoRepository.findAll().stream().map(PedidoDto::new).toList();
   }
 
   @GetMapping("/{id}")
-  public ResponseEntity<Pedido> porId(@PathVariable("id") Long id) {
-    return pedidoRepository.findById(id).map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
+  public ResponseEntity<PedidoDto> porId(@PathVariable("id") Long id) {
+    return pedidoRepository.findById(id).map(PedidoDto::new).map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
   }
 
 }
