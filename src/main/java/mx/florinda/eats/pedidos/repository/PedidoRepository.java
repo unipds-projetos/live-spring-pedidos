@@ -1,5 +1,6 @@
-package mx.florinda.eats.pedidos;
+package mx.florinda.eats.pedidos.repository;
 
+import mx.florinda.eats.pedidos.model.Pedido;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface PedidoRepository extends JpaRepository<Pedido, Long> {

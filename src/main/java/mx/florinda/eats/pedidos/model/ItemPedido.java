@@ -1,4 +1,4 @@
-package mx.florinda.eats.pedidos;
+package mx.florinda.eats.pedidos.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
