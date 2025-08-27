@@ -1,4 +1,4 @@
-package mx.florinda.eats.pedidos.controller.dto;
+package mx.florinda.eats.pedidos.dto;
 
 import mx.florinda.eats.pedidos.model.Pedido;
 import mx.florinda.eats.pedidos.model.StatusPedido;

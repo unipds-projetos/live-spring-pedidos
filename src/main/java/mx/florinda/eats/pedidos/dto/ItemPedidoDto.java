@@ -1,6 +1,5 @@
-package mx.florinda.eats.pedidos.controller.dto;
+package mx.florinda.eats.pedidos.dto;
 
-import mx.florinda.eats.pedidos.model.ItemCardapio;
 import mx.florinda.eats.pedidos.model.ItemPedido;
 
 import java.math.BigDecimal;
